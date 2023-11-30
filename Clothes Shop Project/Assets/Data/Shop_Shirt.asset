@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98b53068680ee94b90376146ab181ba, type: 3}
   m_Name: Shop_Shirt
   m_EditorClassIdentifier: 
-  id: 1
+  id: 3
   itemName: Shirt
   despcrition: this is the description for the shirt
   price: 15
