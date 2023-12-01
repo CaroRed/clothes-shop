@@ -33,28 +33,172 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: Sprite
+    path: BaseBody
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Hat
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Pants
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Shirt
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Shoes
     classID: 212
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1708458552, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+      value: {fileID: -167086440, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
     - time: 0.06666667
-      value: {fileID: -1451971756, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+      value: {fileID: -1205618652, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
     - time: 0.13333334
-      value: {fileID: -141535980, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+      value: {fileID: -874303641, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
     - time: 0.2
-      value: {fileID: 1217875776, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+      value: {fileID: 554658416, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
     - time: 0.26666668
-      value: {fileID: 319117503, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+      value: {fileID: -310867772, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
     - time: 0.33333334
-      value: {fileID: -1848772004, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+      value: {fileID: -1064729080, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
     attribute: m_Sprite
-    path: Sprite
+    path: BaseBody
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 15
+  - curve:
+    - time: 0
+      value: {fileID: 54216634, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - time: 0.06666667
+      value: {fileID: -1510321400, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - time: 0.13333334
+      value: {fileID: 38916632, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - time: 0.2
+      value: {fileID: -2092010751, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - time: 0.26666668
+      value: {fileID: -647379303, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1322979642, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    attribute: m_Sprite
+    path: Hat
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 1009369464, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - time: 0.06666667
+      value: {fileID: -2012458052, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - time: 0.13333334
+      value: {fileID: -593259736, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - time: 0.2
+      value: {fileID: 1406203820, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - time: 0.26666668
+      value: {fileID: -1851399400, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - time: 0.33333334
+      value: {fileID: -1472132540, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    attribute: m_Sprite
+    path: Pants
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 451374146, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - time: 0.06666667
+      value: {fileID: -1961766599, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - time: 0.13333334
+      value: {fileID: 1581249718, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - time: 0.2
+      value: {fileID: -2034914501, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - time: 0.26666668
+      value: {fileID: -912002527, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1682756597, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    attribute: m_Sprite
+    path: Shirt
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 451183886, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - time: 0.06666667
+      value: {fileID: 1241538400, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - time: 0.13333334
+      value: {fileID: -18090902, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - time: 0.2
+      value: {fileID: 2008938096, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - time: 0.26666668
+      value: {fileID: 200857548, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - time: 0.33333334
+      value: {fileID: 1789697675, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    attribute: m_Sprite
+    path: Shoes
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 30
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -62,32 +206,112 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 850496168
+      path: 2783027562
       attribute: 555744692
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 850496168
+      path: 2856774313
+      attribute: 555744692
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3183334126
+      attribute: 555744692
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1248117524
+      attribute: 555744692
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3574509203
+      attribute: 555744692
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2783027562
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2856774313
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3183334126
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1248117524
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3574509203
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1708458552, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
-    - {fileID: -1451971756, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
-    - {fileID: -141535980, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
-    - {fileID: 1217875776, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
-    - {fileID: 319117503, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
-    - {fileID: -1848772004, guid: 6e330de1b2327774b9a9243c99052b68, type: 3}
+    - {fileID: -167086440, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
+    - {fileID: -1205618652, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
+    - {fileID: -874303641, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
+    - {fileID: 554658416, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
+    - {fileID: -310867772, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
+    - {fileID: -1064729080, guid: 319633aba6780e64b9c00c55800c3312, type: 3}
+    - {fileID: 54216634, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - {fileID: -1510321400, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - {fileID: 38916632, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - {fileID: -2092010751, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - {fileID: -647379303, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - {fileID: 1322979642, guid: fd7b5d174e49a5b4884e21c5be5288e1, type: 3}
+    - {fileID: 1009369464, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - {fileID: -2012458052, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - {fileID: -593259736, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - {fileID: 1406203820, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - {fileID: -1851399400, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - {fileID: -1472132540, guid: a9bbdfcee2cfce147b51dd887cb9dc27, type: 3}
+    - {fileID: 451374146, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - {fileID: -1961766599, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - {fileID: 1581249718, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - {fileID: -2034914501, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - {fileID: -912002527, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - {fileID: 1682756597, guid: 4267099eb9e663043bb6f1d41f995d3f, type: 3}
+    - {fileID: 451183886, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - {fileID: 1241538400, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - {fileID: -18090902, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - {fileID: 2008938096, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - {fileID: 200857548, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+    - {fileID: 1789697675, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4
+    m_StopTime: 0.36666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -119,7 +343,83 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FlipX
-    path: Sprite
+    path: BaseBody
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Hat
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Pants
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Shirt
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_FlipX
+    path: Shoes
     classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []

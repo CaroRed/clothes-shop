@@ -8,6 +8,8 @@ public class CoinsManager : MonoBehaviour
     public static CoinsManager _Instance;
     [SerializeField] TextMeshProUGUI coinsTxt;
     [SerializeField] GameObject alertPanel;
+
+    [SerializeField] int startCoins = 50;
     int coins = 0;
 
     private void Awake() 
@@ -31,7 +33,7 @@ public class CoinsManager : MonoBehaviour
 
     void LoadCoins()
     {
-        coins = PlayerPrefs.GetInt("playerCoins", 0);
+        coins = PlayerPrefs.GetInt("playerCoins", startCoins);
         UpdateCoinsUI();
     }
 
