@@ -61,12 +61,34 @@ public class PlayerInventory : MonoBehaviour
 
             GameObject Button = newItem.transform.GetChild(3).gameObject;
             Button.GetComponent<Button>().onClick.AddListener(() => Equip(item));
+
+            GameObject Button1 = newItem.transform.GetChild(4).gameObject;
+            Button1.GetComponent<Button>().onClick.AddListener(() => Sell(item));
         }
+    }
+
+    private void Sell(InventoryItem item)
+    {
+        Debug.Log("Sell Item " + item.name);
+        float price = item.price;
+        //chek if i'm equiped that item unequiped
+
+        //sell
+        CoinsManager._Instance.AddCoins((int)price);
+
+        //remove from inventory
+        RemoveItemToInventory(item);
     }
 
     private void Equip(InventoryItem item)
     {
         Debug.Log("Equip Item " + item.name);
+    }
+
+    public void RemoveItemToInventory(InventoryItem item){
+        inventory.Remove(item);
+        SaveInventory();
+        UpdateInventoryUI();
     }
 
     public void AddItemToInventory(ShopItemData item){
@@ -85,6 +107,7 @@ public class PlayerInventory : MonoBehaviour
 
 
         SaveInventory();
+        UpdateInventoryUI();
     }
 
     public void SaveInventory()
