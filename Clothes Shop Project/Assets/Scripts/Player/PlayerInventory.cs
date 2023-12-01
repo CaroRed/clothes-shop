@@ -11,6 +11,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] GameObject itemsContainer;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] GameObject panel;
+    [SerializeField] GameObject panelItemExists;
     [SerializeField] private List<InventoryItem> inventory = new List<InventoryItem>();
 
     private void Start() {
@@ -91,17 +92,30 @@ public class PlayerInventory : MonoBehaviour
         UpdateInventoryUI();
     }
 
-    public void AddItemToInventory(ShopItemData item){
+    public void AddItemToInventory(ShopItemData item, Button button){
         Debug.Log("Buy: " + item.name);
         InventoryItem newItem = new InventoryItem(item.id, item.itemName, item.price); 
+
+        //check if i have enough money to buy item
+        int ballance = CoinsManager._Instance.GetBallance();
+
+        if(ballance < (int)item.price)
+        {
+            CoinsManager._Instance.DisplayAlertPanel();
+            return;
+        }
 
         if (!inventory.Any(item => item.id == newItem.id))
         {
             inventory.Add(newItem);
+            CoinsManager._Instance.RemoveCoins((int)item.price);
+            button.GetComponentInChildren<TextMeshProUGUI>().text = "BUYED";
+            button.interactable = false;
         }
         else
         {
             Debug.Log("Item already exists in the inventory.");
+            panelItemExists.SetActive(true);
             return;
         }
 
@@ -136,6 +150,7 @@ public class PlayerInventory : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("playerInventory");
         PlayerPrefs.Save();
+        UpdateInventoryUI();
     }
 
     [System.Serializable]

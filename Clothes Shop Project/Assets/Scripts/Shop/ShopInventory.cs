@@ -57,13 +57,15 @@ public class ShopInventory : MonoBehaviour
             Price.GetComponent<TextMeshProUGUI>().text = "$"+item.price.ToString();
             
             GameObject Button = newItem.transform.GetChild(3).gameObject;
-            Button.GetComponent<Button>().onClick.AddListener(() => BuyClick(item));
+            Button buyBtn = Button.GetComponent<Button>();
+            
+            buyBtn.onClick.AddListener(() => BuyClick(item, buyBtn));
         }
     }
 
-    private void BuyClick(ShopItemData item)
+    private void BuyClick(ShopItemData item, Button buyBtn)
     {
-       playerInventory.AddItemToInventory(item);
+       playerInventory.AddItemToInventory(item, buyBtn);
     }
 
   
