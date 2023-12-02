@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d98b53068680ee94b90376146ab181ba, type: 3}
-  m_Name: Shop_Pants
+  m_Name: Shop_Shoes
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: Pants
-  despcrition: blue pants
-  price: 30
-  image: {fileID: 21300000, guid: 7b6acd7eb270b0e49b082ee7d7214cd1, type: 3}
-  equipmentType: 1
+  id: 4
+  itemName: Shoes
+  despcrition: this is the description for shoes
+  price: 10
+  image: {fileID: -353558540, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+  equipmentType: 3

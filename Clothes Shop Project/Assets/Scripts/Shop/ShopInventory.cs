@@ -15,11 +15,24 @@ public class ShopInventory : MonoBehaviour
     [SerializeField] PlayerInventory playerInventory;
     void Start()
     {
-        Debug.Log("count items_ " + itemsToSell.Length);
+        //Debug.Log("count items_ " + itemsToSell.Length);
+
+        playerInventory.onSellItem += CheckItems;
 
         LoadItems();
     }
 
+    private void CheckItems()
+    {
+        Debug.Log("Player sell something");
+
+        foreach (Transform child in itemsContainer.transform)
+        {
+            GameObject Button = child.transform.GetChild(3).gameObject;
+            Button buyBtn = Button.GetComponent<Button>();
+        }
+
+    }
 
     public void DisplayOptionsPanel()
     {
@@ -68,5 +81,8 @@ public class ShopInventory : MonoBehaviour
        playerInventory.AddItemToInventory(item, buyBtn);
     }
 
+    private void OnDisable() {
+        playerInventory.onSellItem -= CheckItems;
+    }
   
 }

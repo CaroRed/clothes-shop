@@ -3466,7 +3466,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9854b5e6df1a0d949a2865ddbfded262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipment: []
+  equipment:
+  - id: 1
+    name: Hat
+    itemObj: {fileID: 1290034657}
+    equipmentType: 0
+  - id: 2
+    name: Pant
+    itemObj: {fileID: 1291797709}
+    equipmentType: 1
+  - id: 3
+    name: Shirt
+    itemObj: {fileID: 434216172}
+    equipmentType: 0
+  - id: 4
+    name: Shoes
+    itemObj: {fileID: 1480595973}
+    equipmentType: 3
+  equipmentIDs: 
 --- !u!1 &918235787
 GameObject:
   m_ObjectHideFlags: 0
@@ -7842,6 +7859,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44526b1bd261b9846b3986d6be2c19dc, type: 2}
   - {fileID: 11400000, guid: 7ee9ffef6414ee74c82aab9997c843e1, type: 2}
   - {fileID: 11400000, guid: aaabd2800a8716647b38f74656b1275b, type: 2}
+  - {fileID: 11400000, guid: f83c54d3cd855d54684929219ff88712, type: 2}
   itemsContainer: {fileID: 1061898869}
   itemPrefab: {fileID: 6178382419714236751, guid: dfb93250d76977b4ca1115be92e3f13f, type: 3}
   panel: {fileID: 417601614}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerEquipment;
 
 [CreateAssetMenu (fileName = "Item", menuName = "Item Shop")]
 public class ShopItemData : ScriptableObject
@@ -10,4 +11,5 @@ public class ShopItemData : ScriptableObject
     public string despcrition;
     public float price;
     public Sprite image;
+    public EquipmentType equipmentType;
 }

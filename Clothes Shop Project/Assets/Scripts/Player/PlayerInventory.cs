@@ -6,14 +6,30 @@ using TMPro;
 using System;
 using System.Linq;
 
+
 public class PlayerInventory : MonoBehaviour
 {
+    public static PlayerInventory _Instance;
     [SerializeField] GameObject itemsContainer;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] GameObject panel;
     [SerializeField] GameObject panelItemExists;
     [SerializeField] private List<InventoryItem> inventory = new List<InventoryItem>();
 
+    public event Action onSellItem;
+    private void Awake() 
+    { 
+        if(_Instance == null)
+        {
+            _Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
     private void Start() {
         LoadInventory();
     }
@@ -44,7 +60,10 @@ public class PlayerInventory : MonoBehaviour
     }
 
      public void UpdateInventoryUI()
-    {
+     {
+
+        List<int> equipmentIDs = PlayerEquipment._Instance.GetEquipmentIDs();
+
         foreach (Transform child in itemsContainer.transform)
         {
             Destroy(child.gameObject);
@@ -61,30 +80,62 @@ public class PlayerInventory : MonoBehaviour
             Title.GetComponent<TextMeshProUGUI>().text = item.name;
 
             GameObject Button = newItem.transform.GetChild(3).gameObject;
-            Button.GetComponent<Button>().onClick.AddListener(() => Equip(item));
+            Button.GetComponent<Button>().onClick.AddListener(() => Sell(item));
 
             GameObject Button1 = newItem.transform.GetChild(4).gameObject;
-            Button1.GetComponent<Button>().onClick.AddListener(() => Sell(item));
+            Button1.GetComponent<Button>().onClick.AddListener(() => Equip(item));
+
+            GameObject Button2 = newItem.transform.GetChild(5).gameObject;
+            Button2.GetComponent<Button>().onClick.AddListener(() => Unequip(item));
+
+            bool exists = false;
+            exists = equipmentIDs.Contains(item.id);
+            
+
+            if(exists)
+            {
+                Button2.SetActive(true);
+                Button1.SetActive(false);
+            }else{
+                Button1.SetActive(true);
+                Button2.SetActive(false);
+            }
         }
     }
 
+   
     private void Sell(InventoryItem item)
     {
         Debug.Log("Sell Item " + item.name);
         float price = item.price;
         //chek if i'm equiped that item unequiped
+        PlayerEquipment._Instance.UnequipItem(item);
 
         //sell
         CoinsManager._Instance.AddCoins((int)price);
 
         //remove from inventory
         RemoveItemToInventory(item);
+
+        //update shop inventory list
+        if(onSellItem != null)
+        {
+            onSellItem();
+        }
+        
     }
 
     private void Equip(InventoryItem item)
     {
         Debug.Log("Equip Item " + item.name);
+
+        PlayerEquipment._Instance.EquipItem(item);
     }
+    private void Unequip(InventoryItem item)
+    {
+       PlayerEquipment._Instance.UnequipItem(item);
+    }
+
 
     public void RemoveItemToInventory(InventoryItem item){
         inventory.Remove(item);
@@ -149,6 +200,7 @@ public class PlayerInventory : MonoBehaviour
     void ClearInventoryData()
     {
         PlayerPrefs.DeleteKey("playerInventory");
+        PlayerPrefs.DeleteKey("EquipmentIDs");
         PlayerPrefs.Save();
         UpdateInventoryUI();
     }
@@ -170,7 +222,6 @@ public class InventoryItem
     public int id;
     public string name;
     public float price;
-
     public InventoryItem(int id, string name, float price)
     {
         this.id = id;
