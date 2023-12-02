@@ -207,10 +207,11 @@ public class PlayerInventory : MonoBehaviour
         ClearInventoryData();
     }
 
-    void ClearInventoryData()
+    void ClearInventoryData() //just for testing purpuse
     {
         PlayerPrefs.DeleteKey("playerInventory");
         PlayerPrefs.DeleteKey("EquipmentIDs");
+        PlayerPrefs.DeleteKey("playerCoins");
         PlayerPrefs.Save();
         UpdateInventoryUI();
     }
