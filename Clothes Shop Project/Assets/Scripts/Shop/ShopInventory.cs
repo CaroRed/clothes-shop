@@ -6,7 +6,7 @@ using TMPro;
 using System;
 public class ShopInventory : MonoBehaviour
 {
-    [SerializeField] ShopItemData[] itemsToSell;
+    public ShopItemData[] itemsToSell;
     [SerializeField] GameObject itemsContainer;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] GameObject panel;
@@ -15,21 +15,35 @@ public class ShopInventory : MonoBehaviour
     [SerializeField] PlayerInventory playerInventory;
     void Start()
     {
-        //Debug.Log("count items_ " + itemsToSell.Length);
+        //Debug.Log("Shop Inventory Start");
 
         playerInventory.onSellItem += CheckItems;
 
         LoadItems();
+        CheckItems();
     }
 
     private void CheckItems()
     {
-        Debug.Log("Player sell something");
+        //Debug.Log("Player sell something");
 
         foreach (Transform child in itemsContainer.transform)
         {
             GameObject Button = child.transform.GetChild(3).gameObject;
             Button buyBtn = Button.GetComponent<Button>();
+            string btnName = buyBtn.name;
+            
+            string[] parts = btnName.Split('_'); 
+            int itemId = int.Parse(parts[1]);
+
+            if(playerInventory.IsItemOnPlayerInventory(itemId))
+            {
+                buyBtn.GetComponentInChildren<TextMeshProUGUI>().text = "BUYED";
+                buyBtn.interactable = false;
+            }else{
+                buyBtn.GetComponentInChildren<TextMeshProUGUI>().text = "BUY";
+                buyBtn.interactable = true;    
+            }
         }
 
     }
@@ -71,9 +85,13 @@ public class ShopInventory : MonoBehaviour
             
             GameObject Button = newItem.transform.GetChild(3).gameObject;
             Button buyBtn = Button.GetComponent<Button>();
+
+            buyBtn.name = "buyBtn_"+item.id;
             
             buyBtn.onClick.AddListener(() => BuyClick(item, buyBtn));
         }
+
+        
     }
 
     private void BuyClick(ShopItemData item, Button buyBtn)
@@ -84,5 +102,20 @@ public class ShopInventory : MonoBehaviour
     private void OnDisable() {
         playerInventory.onSellItem -= CheckItems;
     }
+
+
+    public Sprite SpriteItemById(int idItem)
+{
+    foreach (ShopItemData item in itemsToSell)
+    {
+        if (item.id == idItem)
+        {
+            return item.image; // Return the item if the ID matches
+        }
+    }
+
+    return null; // Return null if no item with the specified ID is found
+}
+    
   
 }

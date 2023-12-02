@@ -28,7 +28,7 @@ public class CoinsManager : MonoBehaviour
 
     void Start()
     {
-        AddCoins(startCoins);
+        //AddCoins(startCoins);
         LoadCoins();
     }
 

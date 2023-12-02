@@ -10,12 +10,14 @@ using System.Linq;
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory _Instance;
+    [SerializeField] ShopInventory shopInventory;
     [SerializeField] GameObject itemsContainer;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] GameObject panel;
     [SerializeField] GameObject panelItemExists;
     [SerializeField] private List<InventoryItem> inventory = new List<InventoryItem>();
 
+    
     public event Action onSellItem;
     private void Awake() 
     { 
@@ -31,6 +33,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
     private void Start() {
+
+        //Debug.Log("Player Inventory Start");
+
         LoadInventory();
     }
     public void DisplayPanel()
@@ -42,7 +47,6 @@ public class PlayerInventory : MonoBehaviour
     {
         panel.SetActive(false);
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -74,7 +78,13 @@ public class PlayerInventory : MonoBehaviour
             GameObject newItem = Instantiate(itemPrefab, itemsContainer.transform);
             GameObject Image = newItem.transform.GetChild(0).gameObject;
             GameObject itemImage = Image.transform.GetChild(0).gameObject;
-            //itemImage.GetComponent<Image>().sprite = item.image;
+            
+            if(itemImage != null)
+            {
+                //Debug.Log("load image " + item.id);
+                itemImage.GetComponent<Image>().sprite = shopInventory.SpriteItemById(item.id);
+            }
+            
 
             GameObject Title = newItem.transform.GetChild(1).gameObject;
             Title.GetComponent<TextMeshProUGUI>().text = item.name;
@@ -127,7 +137,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Equip(InventoryItem item)
     {
-        Debug.Log("Equip Item " + item.name);
+        //Debug.Log("Equip Item " + item.name);
 
         PlayerEquipment._Instance.EquipItem(item);
     }
@@ -144,7 +154,7 @@ public class PlayerInventory : MonoBehaviour
     }
 
     public void AddItemToInventory(ShopItemData item, Button button){
-        Debug.Log("Buy: " + item.name);
+        //Debug.Log("Buy: " + item.name);
         InventoryItem newItem = new InventoryItem(item.id, item.itemName, item.price); 
 
         //check if i have enough money to buy item
@@ -204,6 +214,17 @@ public class PlayerInventory : MonoBehaviour
         PlayerPrefs.Save();
         UpdateInventoryUI();
     }
+
+    public bool IsItemOnPlayerInventory(int idToCheck)
+    {
+        InventoryItem foundItem = inventory.Find(item => item.id == idToCheck);
+        
+        if (foundItem != null) return true;
+        return false;
+
+    }
+
+
 
     [System.Serializable]
     class InventoryWrapper

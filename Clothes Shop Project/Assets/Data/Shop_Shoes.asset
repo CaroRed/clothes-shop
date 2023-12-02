@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Shoes
   despcrition: this is the description for shoes
   price: 10
-  image: {fileID: -353558540, guid: ab2fa2e33ec88a14f9e8b2f025675517, type: 3}
+  image: {fileID: 21300000, guid: cede40d9834543640a2d2fc0089c570d, type: 3}
   equipmentType: 3
